@@ -90,16 +90,16 @@ var fontsize2=2560/screen.width*6;
 
 title1.style.fontSize = fontsize1+"px";
 search.style.fontSize = fontsize2+"px";
+
+document.getElementById('search').addEventListener('focus', function() {
+  this.value = '';
+});
  
 document.addEventListener("keypress", function onEvent(event) {
    if (event.key === "Enter") {
      var url=search.value;
      window.location.href=window.location.href+"service/gateway?url=" + url;
    }
-});
-
-document.getElementById('search').addEventListener('focus', function() {
-  this.value = '';
 });
 </script>
 <style>
